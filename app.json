@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "conexa",
+    "slug": "conexa",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "conexa"
+}
