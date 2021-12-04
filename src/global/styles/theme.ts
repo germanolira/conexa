@@ -11,5 +11,11 @@ export default {
     warning: '#FFEB3B',
     info: '#2196F3',
     success: '#4CAF50'
+  },
+
+  fonts: {
+    regular: 'Roboto_400Regular',
+    medium: 'Roboto_500Medium',
+    bold: 'Roboto_700Bold',
   }
 }
