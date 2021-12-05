@@ -4,6 +4,7 @@ export default {
 
     secondary: '#F28080',
 
+    border: '#DCDCDC',
     white: '#FFFFFF',
     dark: '#000000',
 
