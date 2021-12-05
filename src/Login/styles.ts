@@ -34,7 +34,7 @@ export const InputEmailWrapper = styled.View`
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: 5px;
 
-  margin-top: 10px;
+  margin-top: 20px;
 `;
 
 export const ContainerButtonWrapper = styled.View`

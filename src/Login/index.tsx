@@ -29,7 +29,7 @@ export function Login() {
         <InputEmailWrapper>
           <MaterialCommunityIcons
             name="doctor"
-            size={30}
+            size={24}
             color="#DFDFDF"
             accessible={true}
             accessibilityLabel="Ícone do campo email"
@@ -48,7 +48,7 @@ export function Login() {
         <InputEmailWrapper>
           <MaterialCommunityIcons
             name="lock"
-            size={30}
+            size={24}
             color="#DFDFDF"
             accessible={true}
             accessibilityLabel="Ícone do campo senha"
