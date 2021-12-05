@@ -34,5 +34,26 @@ export const InputEmailWrapper = styled.View`
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: 5px;
 
-  margin-top: 30px;
+  margin-top: 10px;
+`;
+
+export const ContainerButtonWrapper = styled.View`
+  width: 100%;
+  height: 45px;
+
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: 5px;
+
+  /* margin-top: 320px; */
+  position: absolute;
+  bottom: 0;
+`;
+
+export const ButtonText = styled.Text`
+  font-size: 18px;
+  font-family: ${({ theme }) => theme.fonts.medium};
+  color: ${({ theme }) => theme.colors.white};
 `;
