@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text } from 'react-native';
+
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { Image } from 'react-native';
 import { Input } from '../components/Input';
@@ -13,8 +14,34 @@ import {
   ButtonText,
 } from './styles';
 import { Button } from '../components/Button';
+import axios from 'axios';
 
 export function Login() {
+
+  // Create a function that will be called when the user press the button "Login" and
+  // will return the email and password typed by the user, and get the 'token' from api desafio.conexasaude.com.br/api/login using axios and
+  // save it in the storage.
+
+  async function handleLogin(email: string, password: string) {
+    try {
+      const response = await axios.post('https://desafio.conexasaude.com.br/api/login', {
+        email,
+        password,
+      });
+
+      await AsyncStorage.setItem('token', response.data.token);
+    } catch (error) {
+      alert('Usuário ou senha inválidos');
+    }
+  }
+
+  // async function handleLogin() {
+  //   const email = ''
+  //   const password = ''
+  //   const token = ''
+  //   await AsyncStorage.setItem('token', token);
+  // }
+
   return (
     <Container>
       <ContainerWrapper>
@@ -23,7 +50,7 @@ export function Login() {
           style={{
             width: 200,
             height: 35,
-            marginBottom: 100,
+            marginBottom: 140,
           }}
         />
         <InputEmailWrapper>
@@ -69,7 +96,12 @@ export function Login() {
           <Button
             text="Entrar"
             children={
-              <ButtonText>
+              <ButtonText
+                accessible={true}
+                accessibilityLabel="Botão de login"
+                accessibilityHint="Este botão tem a ação de logar"
+                onPress={() => handleLogin('', '')}
+              >
                 Entrar
               </ButtonText>
             }
@@ -78,4 +110,8 @@ export function Login() {
       </ContainerWrapper>
     </Container>
   );
+}
+
+function email(email: any, password: any) {
+  throw new Error('Function not implemented.');
 }

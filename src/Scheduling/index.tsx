@@ -5,10 +5,10 @@ import {
   Container
 } from './styles';
 
-export function Home() {
+export function Scheduling() {
   return (
     <Container>
-      <Text>Hello, World!</Text>
+      <Text>Agendamento</Text>
     </Container>
   );
 }

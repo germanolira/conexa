@@ -11,7 +11,12 @@ import {
 import theme from './src/global/styles/theme';
 
 import { Login } from './src/Login';
+import { Home } from './src/Home';
+
+import { NavigationContainer } from '@react-navigation/native';
+
 import AppLoading from 'expo-app-loading';
+import { AppRoutes } from './src/routes/app.routes';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -24,9 +29,15 @@ export default function App() {
     return <AppLoading />;
   }
 
+  function isLoggedIn() {
+    return true;
+  }
+
   return (
     <ThemeProvider theme={theme}>
-      <Login />
+      <NavigationContainer>
+        {isLoggedIn() ? <AppRoutes /> : <Login />}
+      </NavigationContainer>
     </ThemeProvider>
   );
 }

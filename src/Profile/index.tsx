@@ -5,10 +5,10 @@ import {
   Container
 } from './styles';
 
-export function Home() {
+export function Profile() {
   return (
     <Container>
-      <Text>Hello, World!</Text>
+      <Text>Profile</Text>
     </Container>
   );
 }
