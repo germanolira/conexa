@@ -11,7 +11,6 @@ import { Profile } from '../Profile';
 import { useTheme } from 'styled-components';
 import { Platform } from 'react-native';
 
-
 const { Navigator, Screen } = createBottomTabNavigator();
 
 export function AppRoutes() {
@@ -19,6 +18,7 @@ export function AppRoutes() {
 
   return (
     <Navigator
+      initialRouteName='Login'
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: theme.colors.primary,

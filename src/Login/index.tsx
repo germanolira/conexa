@@ -2,9 +2,11 @@ import React from 'react';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import { Image } from 'react-native';
+import { Image, InteractionManager } from 'react-native';
 import { Input } from '../components/Input';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+
+import { NavigationContainerRefContext, useNavigation } from '@react-navigation/native';
 
 import {
   Container,
@@ -17,30 +19,17 @@ import { Button } from '../components/Button';
 import axios from 'axios';
 
 export function Login() {
+  const navigation = useNavigation();
 
-  // Create a function that will be called when the user press the button "Login" and
-  // will return the email and password typed by the user, and get the 'token' from api desafio.conexasaude.com.br/api/login using axios and
-  // save it in the storage.
+  // @ts-ignore
+  // navigation.navigate('Home');
 
-  async function handleLogin(email: string, password: string) {
-    try {
-      const response = await axios.post('https://desafio.conexasaude.com.br/api/login', {
-        email,
-        password,
-      });
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
 
-      await AsyncStorage.setItem('token', response.data.token);
-    } catch (error) {
-      alert('Usuário ou senha inválidos');
-    }
+  function handleLogin() {
+    navigation.navigate('Home');
   }
-
-  // async function handleLogin() {
-  //   const email = ''
-  //   const password = ''
-  //   const token = ''
-  //   await AsyncStorage.setItem('token', token);
-  // }
 
   return (
     <Container>
@@ -70,6 +59,10 @@ export function Login() {
             placeholder="Digite o seu email"
             placeholderTextColor="#DFDFDF"
             keyboardType='email-address'
+            autoCapitalize="none"
+            autoCorrect={false}
+            value={email}
+            onChangeText={(text) => setEmail(text)}
           />
         </InputEmailWrapper>
         <InputEmailWrapper>
@@ -89,18 +82,22 @@ export function Login() {
             placeholder="Digite a sua senha"
             placeholderTextColor="#DFDFDF"
             secureTextEntry={true}
+            autoCapitalize="none"
+            autoCorrect={false}
+            value={password}
+            onChangeText={(text) => setPassword(text)}
           />
 
         </InputEmailWrapper>
         <ContainerButtonWrapper>
           <Button
+            onPress={handleLogin}
             text="Entrar"
             children={
               <ButtonText
                 accessible={true}
                 accessibilityLabel="Botão de login"
                 accessibilityHint="Este botão tem a ação de logar"
-                onPress={() => handleLogin('', '')}
               >
                 Entrar
               </ButtonText>
@@ -110,8 +107,4 @@ export function Login() {
       </ContainerWrapper>
     </Container>
   );
-}
-
-function email(email: any, password: any) {
-  throw new Error('Function not implemented.');
 }
