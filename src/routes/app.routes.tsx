@@ -10,6 +10,9 @@ import { Scheduling } from '../Scheduling';
 import { Profile } from '../Profile';
 import { useTheme } from 'styled-components';
 import { Platform } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -17,19 +20,16 @@ export function AppRoutes() {
   const theme = useTheme();
 
   return (
-    <Navigator
+    <Stack.Navigator
       initialRouteName='Login'
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: theme.colors.primary,
-        tabBarStyle: {
-          height: Platform.OS === 'ios' ? 85 : 65,
-          paddingVertical: Platform.OS === 'ios' ? 10 : 0,
-          paddingBottom: Platform.OS === 'ios' ? 0 : 10,
-          paddingTop: Platform.OS === 'ios' ? 0 : 10,
-        }
       }}
     >
+      <Screen
+        name='Login'
+        component={Login}
+      />
       <Screen
         name="Home"
         component={Home}
@@ -60,6 +60,6 @@ export function AppRoutes() {
           ),
         }}
       />
-    </Navigator>
+    </Stack.Navigator>
   )
 }

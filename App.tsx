@@ -18,6 +18,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import AppLoading from 'expo-app-loading';
 import { AppRoutes } from './src/routes/app.routes';
 
+import { AuthProvider } from './src/hooks/auth';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 export default function App() {
   const [fontsLoaded] = useFonts({
     Roboto_400Regular,
@@ -29,14 +32,26 @@ export default function App() {
     return <AppLoading />;
   }
 
-  function isLoggedIn() {
-    return false;
+  async function isLoggedIn() {
+    try {
+      const value = await AsyncStorage.getItem('token');
+      if (value !== null) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   return (
     <ThemeProvider theme={theme}>
       <NavigationContainer>
-        {isLoggedIn() ? <AppRoutes /> : <Login />}
+        <AuthProvider>
+          {/* {isLoggedIn() ? <Home /> : <Login />} */}
+          <AppRoutes />
+        </AuthProvider>
       </NavigationContainer>
     </ThemeProvider>
   );

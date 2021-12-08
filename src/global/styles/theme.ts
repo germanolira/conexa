@@ -4,6 +4,12 @@ export default {
 
     secondary: '#F28080',
 
+    background: '#F8F8FC',
+
+    primaryText: '#0F1261',
+
+    cardBackground: '#2A5DE1',
+
     border: '#DCDCDC',
     white: '#FFFFFF',
     dark: '#000000',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { HeaderComponent } from './components/Header';
 
 import {
   Container
@@ -8,7 +8,7 @@ import {
 export function Home() {
   return (
     <Container>
-      <Text>Hello, World!</Text>
+      <HeaderComponent />
     </Container>
   );
 }

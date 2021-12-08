@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
-import { Image, InteractionManager } from 'react-native';
+import { Image } from 'react-native';
 import { Input } from '../components/Input';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Button } from '../components/Button';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
+import { useAuth } from '../hooks/auth';
+
+import axios from "axios";
 import { NavigationContainerRefContext, useNavigation } from '@react-navigation/native';
 
 import {
@@ -15,20 +18,43 @@ import {
   ContainerButtonWrapper,
   ButtonText,
 } from './styles';
-import { Button } from '../components/Button';
-import axios from 'axios';
 
 export function Login() {
+  const { user } = useAuth();
   const navigation = useNavigation();
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
 
-  // @ts-ignore
-  // navigation.navigate('Home');
+  console.log(email);
+  console.log(senha);
 
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
+  function handleSignIn() {
+    if (email == '' || senha == '') {
+      alert('Preencha todos os campos');
+    } else if (!email.includes('@')) {
+      alert('Precisa ser um email válido');
+    } else if (senha.length < 6) {
+      alert('A senha precisa ter no mínimo 6 caracteres');
+    } else {
+      const data = {
+        email,
+        senha,
+      };
 
-  function handleLogin() {
-    navigation.navigate('Home');
+      console.log(data);
+
+      axios
+        .post('http://desafio.conexasaude.com.br/api/login', data)
+        .then((response) => {
+          console.log(response.data);
+          // AsyncStorage.setItem('@token', response.data.token);
+          // console.log(response.data.token);
+          navigation.navigate('Home');
+        })
+        .catch((error: any) => {
+          console.log(error);
+        });
+    }
   }
 
   return (
@@ -62,7 +88,7 @@ export function Login() {
             autoCapitalize="none"
             autoCorrect={false}
             value={email}
-            onChangeText={(text) => setEmail(text)}
+            onChange={(e) => setEmail(e.nativeEvent.text)}
           />
         </InputEmailWrapper>
         <InputEmailWrapper>
@@ -84,14 +110,14 @@ export function Login() {
             secureTextEntry={true}
             autoCapitalize="none"
             autoCorrect={false}
-            value={password}
-            onChangeText={(text) => setPassword(text)}
+            value={senha}
+            onChange={(e) => setSenha(e.nativeEvent.text)}
           />
 
         </InputEmailWrapper>
         <ContainerButtonWrapper>
           <Button
-            onPress={handleLogin}
+            onPress={() => handleSignIn()}
             text="Entrar"
             children={
               <ButtonText
