@@ -16,9 +16,7 @@ export const HeaderContainer = styled.View`
   padding: 0 20px;
 `;
 
-export const HeaderWrapper = styled.View`
-
-`;
+export const HeaderWrapper = styled.View``;
 
 export const Title = styled.Text`
   font-family: ${({ theme }) => theme.fonts.medium};
@@ -59,7 +57,6 @@ export const ModalContainer = styled.View`
 `;
 
 export const ModalHeader = styled.View`
-  /* background-color: red; */
   height: 40px;
 
   justify-content: center;
@@ -67,7 +64,7 @@ export const ModalHeader = styled.View`
   padding-right: 10px;
 `;
 
-export const Salvar = styled.TouchableOpacity`
+export const Salvar = styled(TouchableOpacity)`
   width: 310px;
   height: 50px;
 

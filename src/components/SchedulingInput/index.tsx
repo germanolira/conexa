@@ -1,4 +1,5 @@
 import React from 'react';
+import { TextInputProps } from 'react-native';
 
 import {
   Container,
@@ -6,20 +7,24 @@ import {
   Input,
 } from './styles';
 
-interface InputProps {
+interface InputSchedulingProps extends TextInputProps {
   title: string;
   placeholder: string;
+  keyboardType?: 'default' | 'number-pad' | 'decimal-pad' | 'numeric';
 }
 
 export function SchedulingInput({
   title,
   placeholder,
-}: InputProps) {
+  keyboardType = 'default',
+  ...rest
+}: InputSchedulingProps) {
   return (
-    <Container>
+    <Container {...rest}>
       <Title>{title}</Title>
       <Input
         placeholder={placeholder}
+        keyboardType={keyboardType}
       />
     </Container>
   );

@@ -30,11 +30,11 @@ export function Card() {
         <CardHeader>
           <ImageDoctor
             source={{
-              uri: 'https://t4.ftcdn.net/jpg/02/60/04/09/360_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg',
+              uri: 'https://randomuser.me/api/portraits/women/51.jpg',
             }}
           />
           <TextWrapper>
-            <TitleDoctor>Dr. Daniel Vieira</TitleDoctor>
+            <TitleDoctor>Miranda Ratislav</TitleDoctor>
             <Cargo>Neurologista</Cargo>
           </TextWrapper>
         </CardHeader>
