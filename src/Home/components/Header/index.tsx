@@ -59,8 +59,18 @@ export function HeaderComponent() {
   }
 
   function handleSchedulingData() {
-    setModalVisible(!isModalVisible);
-    Alert.alert('Agendamento realizado com sucesso!');
+    if (dataConsulta === '') {
+      Alert.alert('Atenção', 'Informe a data da consulta');
+    } else if (idMedico === '') {
+      Alert.alert('Atenção', 'Informe o médico');
+    } else if (paciente === '') {
+      Alert.alert('Atenção', 'Informe o paciente');
+    } else if (observacao === '') {
+      Alert.alert('Atenção', 'Informe a observação');
+    } else {
+      setModalVisible(!isModalVisible);
+      Alert.alert('Agendamento realizado com sucesso!');
+    }
   }
 
   return (
