@@ -2,11 +2,7 @@ import styled from 'styled-components/native';
 import { TouchableOpacity } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 
-export const Container = styled.SafeAreaView`
-  flex: 1;
-
-  background-color: ${({ theme }) => theme.colors.white};
-`;
+export const Container = styled.SafeAreaView``;
 
 export const HeaderContainer = styled.View`
   width: 100%;
@@ -25,6 +21,7 @@ export const HeaderWrapper = styled.View`
 `;
 
 export const Title = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.medium};
   font-size: ${RFValue(20)}px;
   font-weight: 500;
   color: ${({ theme }) => theme.colors.primaryText};

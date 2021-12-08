@@ -1,4 +1,5 @@
 import React from 'react';
+import { Input } from './components/Input';
 import { HeaderComponent } from './components/Header';
 
 import {
@@ -9,6 +10,7 @@ export function Home() {
   return (
     <Container>
       <HeaderComponent />
+      <Input />
     </Container>
   );
 }

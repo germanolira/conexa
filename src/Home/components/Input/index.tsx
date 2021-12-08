@@ -7,11 +7,15 @@ import {
   InputText,
 } from './styles';
 
-export function InputSearch() {
+export function Input() {
   return (
     <Container>
       <InputWrapper>
-        <Feather name="search" size={22} color="gray" />
+        <Feather
+          name="search"
+          size={24}
+          color="#7779A7"
+        />
         <InputText
           placeholder="Procure por uma consulta"
         />
