@@ -4,12 +4,11 @@ import { Image, StatusBar } from 'react-native';
 import { Input } from '../components/Input';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Button } from '../components/Button';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { useAuth } from '../hooks/auth';
 
 import axios from "axios";
-import { NavigationContainerRefContext, useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 import {
   Container,
@@ -47,8 +46,6 @@ export function Login() {
         .post('http://desafio.conexasaude.com.br/api/login', data)
         .then((response) => {
           console.log(response.data);
-          // AsyncStorage.setItem('@token', response.data.token);
-          // console.log(response.data.token);
           navigation.navigate('Home');
         })
         .catch((error: any) => {

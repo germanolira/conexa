@@ -7,7 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
-const { Navigator, Screen } = createBottomTabNavigator();
+const { Screen } = createBottomTabNavigator();
 
 export function AppRoutes() {
 

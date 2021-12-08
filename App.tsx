@@ -10,9 +10,6 @@ import {
 
 import theme from './src/global/styles/theme';
 
-import { Login } from './src/Login';
-import { Home } from './src/Home';
-
 import { NavigationContainer } from '@react-navigation/native';
 
 import AppLoading from 'expo-app-loading';
@@ -49,7 +46,6 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <NavigationContainer>
         <AuthProvider>
-          {/* {isLoggedIn() ? <Home /> : <Login />} */}
           <AppRoutes />
         </AuthProvider>
       </NavigationContainer>

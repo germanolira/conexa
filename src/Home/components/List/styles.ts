@@ -7,8 +7,6 @@ export const Container = styled.ScrollView`
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 20px;
-
-  /* background-color: ${({ theme }) => theme.colors.background}; */
 `;
 
 export const ListContainer = styled.View`

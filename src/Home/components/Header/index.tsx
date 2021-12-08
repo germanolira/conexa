@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StatusBar, View, Text, Button, Alert } from 'react-native';
+import { StatusBar, Alert } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
 import Modal from "react-native-modal";
