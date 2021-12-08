@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Image } from 'react-native';
+import { Image, StatusBar } from 'react-native';
 import { Input } from '../components/Input';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Button } from '../components/Button';
@@ -60,12 +60,17 @@ export function Login() {
   return (
     <Container>
       <ContainerWrapper>
+        <StatusBar
+          barStyle="dark-content"
+          backgroundColor="transparent"
+          translucent
+        />
         <Image
           source={require('../../assets/conexalogo.png')}
           style={{
             width: 200,
             height: 35,
-            marginBottom: 140,
+            marginBottom: 90,
           }}
         />
         <InputEmailWrapper>

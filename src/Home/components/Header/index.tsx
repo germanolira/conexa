@@ -9,13 +9,14 @@ import {
   Subtitle,
   SchedulingWrapper,
   SchedulingButton,
+  TextButton,
 } from './styles';
 
 export function HeaderComponent() {
   return (
     <Container>
       <StatusBar
-        barStyle="light-content"
+        barStyle="dark-content"
         backgroundColor="transparent"
         translucent
       />
@@ -25,7 +26,9 @@ export function HeaderComponent() {
           <Subtitle>Doutor 👋</Subtitle>
         </HeaderWrapper>
         <SchedulingWrapper>
-          <SchedulingButton></SchedulingButton>
+          <SchedulingButton>
+            <TextButton>Agendar</TextButton>
+          </SchedulingButton>
         </SchedulingWrapper>
       </HeaderContainer>
     </Container>
