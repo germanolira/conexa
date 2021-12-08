@@ -1,6 +1,8 @@
 import React from 'react';
+
 import { Input } from './components/Input';
 import { HeaderComponent } from './components/Header';
+import { Card } from './components/Card';
 
 import {
   Container
@@ -11,6 +13,7 @@ export function Home() {
     <Container>
       <HeaderComponent />
       <Input />
+      <Card />
     </Container>
   );
 }

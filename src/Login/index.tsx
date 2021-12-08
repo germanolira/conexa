@@ -75,15 +75,15 @@ export function Login() {
         />
         <InputEmailWrapper>
           <MaterialCommunityIcons
-            name="doctor"
+            name="email"
             size={24}
             color="#DFDFDF"
             accessible={true}
             accessibilityLabel="Ícone do campo email"
             accessibilityHint="Este ícone não tem nenhuma ação"
             style={{
-              marginLeft: 5,
-              marginRight: 5,
+              marginLeft: 10,
+              marginRight: 10,
             }}
           />
           <Input
@@ -105,8 +105,8 @@ export function Login() {
             accessibilityLabel="Ícone do campo senha"
             accessibilityHint="Este ícone não tem nenhuma ação"
             style={{
-              marginLeft: 5,
-              marginRight: 5,
+              marginLeft: 10,
+              marginRight: 10,
             }}
           />
           <Input

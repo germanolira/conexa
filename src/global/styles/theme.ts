@@ -8,7 +8,8 @@ export default {
 
     primaryText: '#0F1261',
 
-    cardBackground: '#2A5DE1',
+    cardBackground: '#575CE5',
+    cardBackgroundOpacity: '#797DEA',
 
     border: '#DCDCDC',
     white: '#FFFFFF',
