@@ -17,6 +17,7 @@ import {
   DateText,
   Time,
   TimeText,
+  Subtitle,
 } from './styles';
 
 export function Card() {
@@ -58,6 +59,8 @@ export function Card() {
             </Time>
           </DetailsWrapper>
         </ContainerDetails>
+
+        <Subtitle>Consultas</Subtitle>
 
       </CardWrapper>
     </Container>

@@ -99,3 +99,11 @@ export const TimeText = styled.Text`
   font-family: ${({ theme }) => theme.fonts.regular};
   margin-left: 10px;
 `;
+
+export const Subtitle = styled.Text`
+  font-size: 20px;
+  color: ${({ theme }) => theme.colors.primaryText};
+  font-family: ${({ theme }) => theme.fonts.medium};
+
+  margin-top: 60px;
+`;

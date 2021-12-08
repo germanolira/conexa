@@ -50,3 +50,40 @@ export const SchedulingButton = styled(TouchableOpacity)`
 export const TextButton = styled.Text`
   color: ${({ theme }) => theme.colors.white};
 `;
+
+export const ModalContainer = styled.View`
+  width: 350px;
+  height: 550px;
+
+  background-color: ${({ theme }) => theme.colors.white};
+`;
+
+export const ModalHeader = styled.View`
+  /* background-color: red; */
+  height: 40px;
+
+  justify-content: center;
+  align-items: flex-end;
+  padding-right: 10px;
+`;
+
+export const Salvar = styled.TouchableOpacity`
+  width: 310px;
+  height: 50px;
+
+  background-color: ${({ theme }) => theme.colors.primaryText};
+
+  border-radius: 5px;
+
+  justify-content: center;
+  align-items: center;
+
+  margin: 50px 20px;
+`;
+
+export const TextSalvar = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.regular};
+  font-size: ${RFValue(20)}px;
+
+  color: ${({ theme }) => theme.colors.white};
+`;

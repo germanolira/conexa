@@ -3,6 +3,7 @@ import React from 'react';
 import { Input } from './components/Input';
 import { HeaderComponent } from './components/Header';
 import { Card } from './components/Card';
+import { List } from './components/List';
 
 import {
   Container
@@ -14,6 +15,7 @@ export function Home() {
       <HeaderComponent />
       <Input />
       <Card />
+      <List />
     </Container>
   );
 }
